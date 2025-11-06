@@ -52,8 +52,9 @@
     </nav>
 
     <header class="border-b border-zinc-700 bg-white/80 dark:bg-zinc-800 py-6">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-gray-800 dark:text-white/95">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-gray-800 dark:text-white/95 sm:flex sm:justify-between align-middle">
             <h1 class="text-3xl font-bold tracking-tight">{{ $heading }}</h1>
+            <x-button href="/jobs/create">Create Job</x-button>
         </div>
     </header>
     
