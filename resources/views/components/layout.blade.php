@@ -23,20 +23,35 @@
                 </svg>
                 </button>
             </div>
-        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div class="flex shrink-0 items-center">
-            <img src="https://laracasts.com/images/logo/logo-triangle.svg" alt="Your Company" class="h-8 w-auto" />
+            <div class="flex flex-1 items-center justify-between sm:items-stretch sm:justify-start">
+                <div class="flex shrink-0 items-center">
+                    <img src="https://laracasts.com/images/logo/logo-triangle.svg" alt="Your Company" class="h-8 w-auto" />
+                </div>
+                <div class="flex justify-between w-full">
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <!-- Current: "bg-gray-900 dark:bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
+                            <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+                            <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
+                            <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
+                            <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        @guest
+                            <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
+                            <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+                        @endguest
+
+                        @auth
+                            <form method="POST" action="/logout">
+                                @csrf
+                                <button type="submit" class="text-gray-300 hover:bg-white/5 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Log Out</button>
+                            </form>
+                        @endauth
+                    </div>
+                </div>
             </div>
-            <div class="hidden sm:ml-6 sm:block">
-            <div class="flex space-x-4">
-                <!-- Current: "bg-gray-900 dark:bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-                <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
-                <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
-                <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
-            </div>
-            </div>
-        </div>
         </div>
     </div>
 
