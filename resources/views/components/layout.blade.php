@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite(['resources/css/app.js','resources/css/app.css'])
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 </head>
 <body>
     <nav class="relative bg-gray-800 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10 mb-0">

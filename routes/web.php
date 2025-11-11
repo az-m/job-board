@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::view('/', 'home');
 Route::view('/about', 'about');
 Route::view('/contact', 'contact');
